@@ -2,12 +2,16 @@
 
 A production-style retail analytics project that turns historical sales into demand forecasts and reorder recommendations.
 
+Validated on `956,500` daily sales rows across `500` store-item series, with best backtest `RMSSE = 0.690` and `311` reorder-now recommendations generated from the latest run.
+
 This repository is designed to look and behave like a real internal decision-support tool:
 
 - a reproducible data pipeline built on DuckDB and SQL
 - a 3-model forecast benchmark using a shared rolling backtest
 - an API layer for serving metrics, forecasts, and recommendations
 - a Streamlit dashboard for planners and managers
+
+Important project note: the M5 dataset includes retail sales, prices, and calendar signals, but it does not include real on-hand inventory or purchase-order tables. For that reason, the inventory layer uses documented, reproducible policy inputs to convert forecasts into realistic reorder decisions.
 
 The goal is not just model accuracy. The goal is to answer a business question:
 
