@@ -2,7 +2,7 @@
 
 Thanks for contributing to this project.
 
-The goal of this repository is to keep the codebase interview-ready and easy to explain, so small, clean improvements are preferred over large mixed changes.
+The goal of this repository is to keep the codebase production-style, easy to understand, and easy to maintain, so small, clean improvements are preferred over large mixed changes.
 
 ## Local Setup
 

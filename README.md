@@ -93,7 +93,7 @@ The current `v1` build has already been run end to end on the real M5 dataset su
 ```text
 .
 |-- data/raw/m5
-|-- docs/interview-guide.md
+|-- docs/images/
 |-- sql/
 |-- src/retail_forecasting/
 |   |-- api/
@@ -245,11 +245,3 @@ docker compose up --build
 - Contributor setup and local workflow notes live in [CONTRIBUTING.md](CONTRIBUTING.md)
 - The project targets `Python 3.11+`
 - Run `pytest` before opening a pull request or pushing a larger refactor
-
-## Resume-Friendly Project Story
-
-You can describe this project in one sentence like this:
-
-> Built a retail demand forecasting and inventory optimization system using Python, SQL, DuckDB, FastAPI, and Streamlit to forecast item-store demand and convert predictions into reorder recommendations.
-
-For deeper interview prep, see [interview-guide.md](docs/interview-guide.md).
