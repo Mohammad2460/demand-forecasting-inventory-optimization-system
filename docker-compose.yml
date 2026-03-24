@@ -1,0 +1,31 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    environment:
+      RAW_M5_DIR: data/raw/m5
+      WAREHOUSE_PATH: outputs/warehouse/m5.duckdb
+      ARTIFACT_DIR: outputs/artifacts
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+    ports:
+      - "8000:8000"
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    environment:
+      DASHBOARD_API_URL: http://api:8000
+      WAREHOUSE_PATH: outputs/warehouse/m5.duckdb
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+    depends_on:
+      - api
+    ports:
+      - "8501:8501"

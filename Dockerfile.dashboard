@@ -1,0 +1,14 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY pyproject.toml README.md ./
+COPY src ./src
+COPY sql ./sql
+COPY docs ./docs
+
+RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -e .
+
+EXPOSE 8501
+
+CMD ["streamlit", "run", "src/retail_forecasting/dashboard/app.py", "--server.address=0.0.0.0"]
