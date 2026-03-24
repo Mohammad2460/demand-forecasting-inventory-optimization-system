@@ -125,7 +125,13 @@ source .venv/bin/activate
 pip install '.[dev]'
 ```
 
-### 3. Run the full pipeline
+### 3. Review the example configuration
+
+The repository includes a public [.env.example](.env.example) file that documents the expected paths and local service ports.
+
+It contains example values only. The real `.env` file is intentionally ignored by git and should stay local if you create one for your own setup.
+
+### 4. Run the full pipeline
 
 ```bash
 retail-forecast run-all
@@ -137,13 +143,13 @@ This creates:
 - model metadata in `outputs/artifacts/model_metadata.json`
 - production forecasts and inventory recommendations in DuckDB tables
 
-### 4. Start the API
+### 5. Start the API
 
 ```bash
 retail-forecast serve-api
 ```
 
-### 5. Start the dashboard
+### 6. Start the dashboard
 
 ```bash
 streamlit run src/retail_forecasting/dashboard/app.py
@@ -229,6 +235,12 @@ Run the API and dashboard with Docker Compose:
 ```bash
 docker compose up --build
 ```
+
+## Development
+
+- Contributor setup and local workflow notes live in [CONTRIBUTING.md](CONTRIBUTING.md)
+- The project targets `Python 3.11+`
+- Run `pytest` before opening a pull request or pushing a larger refactor
 
 ## Resume-Friendly Project Story
 
